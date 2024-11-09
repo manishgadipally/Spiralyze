@@ -563,3 +563,398 @@ body {
   text-align: right;
   color: #757575;
 }
+/*-------------------*/
+/*-------------------*/
+
+.green-wrapper {
+  padding-top: 20px;
+  height: 650px;
+  /* background-color: linear-gradient(180deg, #194D41 0%, rgba(25, 77, 65, 0.70) 100%);
+  background: url(./images/image2.png) lightgray 50% / cover no-repeat;
+  z-index: 1; */
+
+
+  /* Fallback background color */
+  /* Background image URL */
+  background-size: cover;
+
+  background-image: url('./assets/image2.png');
+  /* Replace with your background image URL */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+
+}
+
+.green-wrapper::before {
+  content: '';
+  position: absolute;
+  width:100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, #194D41 0%, rgba(25, 77, 65, 0.70) 100%);
+  /* Overlay color with opacity */
+  z-index: 1;
+}
+
+.header {
+  display: flex;
+
+
+  position: relative;
+  z-index: 2;
+
+  color: white;
+
+}
+
+/* .image {
+  width: 1280px;
+  height: 650px;
+  flex-shrink: 0;
+} */
+
+.logo {
+  display: flex;
+  width: 226.094px;
+  height: 35px;
+  flex-shrink: 0;
+  fill: #B3E5DA;
+  padding-left:128px;
+  padding-top:20.5px;
+  padding-right:1020px;
+ 
+  
+ 
+}
+
+.logoimage {
+  width: 226.094px;
+  height: 35px;
+  
+}
+
+
+.navigation-wrapper {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navigation-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-home {
+  display: flex;
+  color: #FFF;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 41px;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+
+.nav-about {
+  display: flex;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 41px;
+
+
+}
+
+.nav-contact {
+  display: flex;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 41px;
+
+}
+
+.navigation-contact {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.nav-info {
+  display: flex;
+  color: #fbfbfb;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 41px;
+}
+
+.number {
+  color: #5BC8AF;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 41px;
+}
+
+.text-contact-wrapper {
+  display: flex;
+  
+ 
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 20px;
+  
+
+}
+
+.text-wrapper {
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+/*Text Header*/
+
+
+.heading {
+
+  -webkit-text-stroke-width: 1;
+  -webkit-text-stroke-color: #FFF;
+  font-family: Montserrat;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 72px;
+  /* 112.5% */
+}
+
+.text-transparency {
+  color: white;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+  margin-bottom: 0 !important;
+}
+
+.text-intervention {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.text-header-info {
+  margin: 0;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin-left: 4px;
+  margin-bottom: 40px;
+}
+
+/*Contact Form*/
+.contact-form {
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 472px;
+  height: 449px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #2A7D6C 0%, rgba(62, 105, 96, 0.62) 100%);
+  gap: 20px;
+}
+
+.contact-title {
+  display: flex;
+  color: #FFF;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  justify-content: center;
+}
+
+
+.contact-fullname {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+
+.contact-fname,
+.contact-lname {
+  display: flex;
+  width: 200px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.contact-mail,
+.contact-company {
+  display: flex;
+  width: 200px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+
+.fname,
+.lname,
+.mail,
+.company {
+  background: transparent;
+  width: 200px;
+  height: 48px;
+  color: white;
+  border: 1px solid rgb(255, 255, 255);
+
+}
+
+input::placeholder {
+  color: white;
+  opacity: 0.5;
+  padding-left:16px ;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.contact-country {
+  display: flex;
+  width: 416px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.70);
+
+}
+
+select {
+  background-color: transparent;
+  width: 416px;
+  height: 48px;
+  color: rgb(0, 0, 0);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  color: rgba(255, 255, 255, 0.709);
+  background-color: rgba(62, 105, 96, 0.62);
+  padding-left:16px ;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 16px;
+
+
+}
+
+option {
+  color: black;
+  background-color: rgba(62, 105, 96, 0.62);
+  background: transparent;
+}
+
+
+
+.contact-submit {
+  width: 221px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #5BC8AF;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.08);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.submitimage {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  color: #FFF;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+
+}
+
+@media screen and (max-width: 760px) {
+  .text-contact-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+  }
+}
+.hero-section {
+  margin-bottom: 78px;
+}
