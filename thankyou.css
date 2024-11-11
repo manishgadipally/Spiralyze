@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+}
+.thankyou-wrapper {
+    background: linear-gradient(180deg, #194D41 0%, rgba(25, 77, 65, 0.70) 100%);
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    align-items: center;
+    color:white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.data{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
