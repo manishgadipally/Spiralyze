@@ -53,3 +53,21 @@ function CarouselFeature() {
 
 CarouselFeature();
 
+
+
+
+
+
+
+
+document.getElementById("submitButton").addEventListener("click", function(event) {
+    event.preventDefault();
+  
+    localStorage.setItem("fname", document.getElementById("fname").value);
+    localStorage.setItem("lname", document.getElementById("lname").value);
+    localStorage.setItem("emails", document.getElementById("emails").value);
+    localStorage.setItem("company", document.getElementById("company").value);
+    localStorage.setItem("country", document.getElementById("country").value);
+    
+    window.location.href = "thankyou.html";
+});
