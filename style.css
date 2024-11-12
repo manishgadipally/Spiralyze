@@ -1,57 +1,66 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box; /* Ensures padding and border are included in the width and height */
+  box-sizing: border-box;
+  /* Ensures padding and border are included in the width and height */
 }
 
 body {
   margin: 0;
 }
+
 .row {
   display: flex;
-  
+
 }
 
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px; /* Adds some side padding for all screen sizes */
+  padding: 0 20px;
+  /* Adds some side padding for all screen sizes */
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 15px; /* Adjusts padding for tablets */
+    padding: 0 15px;
+    /* Adjusts padding for tablets */
     padding-top: 20.5px;
   }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 10px; /* Further adjusts padding for smaller screens */
+    padding: 0 10px;
+    /* Further adjusts padding for smaller screens */
     padding-top: 15px;
   }
 }
+
 .heading {
   margin-bottom: 32px;
 }
+
 .gai-button-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
 @media (max-width: 768px) {
   .gai-button-wrapper {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* Two columns for tablet-sized screens */
+    grid-template-columns: repeat(2,
+        1fr);
+    /* Two columns for tablet-sized screens */
   }
 }
 
 @media (max-width: 480px) {
   .gai-button-wrapper {
-    grid-template-columns: 1fr; /* One column for mobile screens */
+    grid-template-columns: 1fr;
+    /* One column for mobile screens */
   }
 }
+
 .gai-button {
   height: 96px;
   padding: 0 56px;
@@ -60,11 +69,14 @@ body {
   margin-right: 32px;
   margin-bottom: 32px;
 }
+
 @media (max-width: 767px) {
   .gai-button {
-    padding: 0 20px; /* One column for mobile screens */
+    padding: 0 20px;
+    /* One column for mobile screens */
   }
 }
+
 .gai-button .Needs-Assesment {
   height: 96px;
   display: flex;
@@ -81,11 +93,81 @@ body {
   color: #333;
 }
 
+.Needs-Assesment:hover {
+
+  color: #5BC8AF;
+
+}
+
+.gai-button:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  
+
+}
+
+.info-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 300px;
+  height: 86px;
+  border-radius: 8px;
+  background: #297C6B;
+  color: white;
+ 
+  top: 100%;
+  font-family: Montserrat;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  
+  /* 153.846% */
+
+}
+
+
+.tooltip-text::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #297C6B transparent transparent transparent; 
+}
+
+.input-tooltip{
+  visibility: hidden;
+  width: 300px;
+  height: 86px;
+  border-radius: 8px;
+  background:rgb(255, 3, 3);
+  color: white;
+  z-index: 1;
+  top: 100%;
+  font-family: Montserrat;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+
+}
+
+
+
 /*-------------------*/
 
 .wcoe-heading {
-  font-size: 36px; /* Adjust the size as needed */
-  font-weight: 900; /* Bold weight for the filled text */
+  font-size: 36px;
+  /* Adjust the size as needed */
+  font-weight: 900;
+  /* Bold weight for the filled text */
   display: flex;
   align-items: center;
   margin-bottom: 32px;
@@ -96,6 +178,7 @@ body {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
+
 .para-one,
 .para-two,
 .para-three {
@@ -114,6 +197,7 @@ body {
   text-align: left;
   color: #333;
 }
+
 .Loneliness-and-social-isolation-are-growing-public-health-concerns-in-our-aging-society-Whilst-thes {
   font-family: Montserrat;
   font-size: 14px;
@@ -125,6 +209,7 @@ body {
   text-align: left;
   color: #333;
 }
+
 .Interventions-should-focus-on-older-adults-desire-for-connectedness-participation-and-independence {
   font-family: Montserrat;
   font-size: 18px;
@@ -136,14 +221,16 @@ body {
   text-align: left;
   color: #333;
 }
-.Interventions-should-focus-on-older-adults-desire-for-connectedness-participation-and-independence
-  .text-style-1 {
+
+.Interventions-should-focus-on-older-adults-desire-for-connectedness-participation-and-independence .text-style-1 {
   font-weight: 800;
 }
+
 .paragraphs-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
 /*-------------------*/
 .carousel-container {
   display: flex;
@@ -152,6 +239,7 @@ body {
   align-items: center;
   margin-bottom: 32px;
 }
+
 .carousel-wrapper {
   display: flex;
   flex-direction: row;
@@ -166,10 +254,12 @@ body {
   height: 270px;
   margin-right: 36px;
 }
+
 .carousel-image img {
   width: 100%;
   height: 100%;
 }
+
 .carousel-text-wrapper {
   padding: 38px 65px 45px;
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.12);
@@ -179,6 +269,7 @@ body {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
+
 .Abbie-Harvey {
   font-family: Montserrat;
   font-size: 24px;
@@ -191,14 +282,17 @@ body {
   color: #fff;
   margin-bottom: 21px;
 }
+
 .I-have-been-caring-for-my-mom-dad-off-and-on-for-about-10-years-now-and-I-know-the-importance-of {
   color: #fff;
   font-family: Montserrat;
   font-size: 18px;
   font-style: italic;
   font-weight: 400;
-  line-height: 28px; /* 155.556% */
+  line-height: 28px;
+  /* 155.556% */
 }
+
 .carousel-one,
 .carousel-two,
 .carousel-three {
@@ -207,14 +301,17 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .name-text-wrapper {
   position: relative;
   top: -15px;
 }
+
 .invalid-image {
   display: flex;
   justify-content: flex-end;
 }
+
 .dot {
   width: 16px;
   height: 16px;
@@ -230,9 +327,11 @@ body {
   align-items: center;
   gap: 20px;
 }
+
 .arrow-left-icon {
   margin-right: 36px;
 }
+
 .arrow-right-icon {
   margin-left: 36px;
 }
@@ -249,7 +348,8 @@ body {
 
 .dot.active-dot {
   opacity: 1;
-  background-color: #5bc8af; /* Adjusted color to highlight the active dot */
+  background-color: #5bc8af;
+  /* Adjusted color to highlight the active dot */
 }
 
 /*-------------------*/
@@ -261,15 +361,20 @@ body {
   margin-bottom: 64px;
   justify-content: space-between;
 }
+
 .we-understand-image {
   width: 471px;
   height: 200px;
   object-fit: contain;
+
 }
+
 .we-understand-image img {
   width: 100%;
   height: 100%;
+
 }
+
 .WE-UNDERSTAND {
   width: 344px;
   height: 46px;
@@ -282,6 +387,7 @@ body {
   letter-spacing: normal;
   text-align: left;
 }
+
 .we-understand-para-one,
 .we-understand-para-two,
 .we-understand-para-three span {
@@ -295,11 +401,13 @@ body {
   text-align: left;
   color: #333;
 }
+
 .we-understand-para {
   display: flex;
   gap: 36px;
   margin-top: 32px;
 }
+
 .success-rate-gai-button {
   width: 371px;
   height: 52px;
@@ -307,6 +415,7 @@ body {
   border-radius: 4px;
   border: solid 2px #5bc8af;
 }
+
 .text-success-rate {
   width: 167px;
   height: 28px;
@@ -322,13 +431,16 @@ body {
   text-align: left;
   color: #5bc8af;
 }
+
 .success-rate-button-wrapper {
   margin-top: 10px;
 }
+
 .we-understand-container,
 .carousel-container {
   margin-bottom: 100px;
 }
+
 /* .we-understand-container{
   background: #F5F5F5;
 } */
@@ -384,6 +496,7 @@ body {
   font-size: 16px;
   color: #d1e3dd;
 }
+
 .video-container-heading {
   width: 444px;
   height: 52px;
@@ -399,6 +512,7 @@ body {
   letter-spacing: normal;
   text-align: left;
 }
+
 .watch-text {
   font-family: Montserrat;
   font-size: 44px;
@@ -410,16 +524,19 @@ body {
   text-align: left;
   margin-right: 12px;
 }
+
 .video-content {
   display: flex;
   align-items: flex-start;
   gap: 24.4px;
 }
+
 .video-content-wrapper {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
+
 .video-title {
   width: 430px;
   flex-grow: 0;
@@ -433,6 +550,7 @@ body {
   text-align: left;
   color: #fff;
 }
+
 .video-description {
   width: 430px;
   flex-grow: 0;
@@ -446,17 +564,20 @@ body {
   text-align: left;
   color: rgba(255, 255, 255, 0.8);
 }
+
 .curved-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 75px;
 }
+
 .video-section {
   width: 749px;
   height: 648px;
   object-fit: contain;
 }
+
 .video-section img {
   width: 100%;
   height: 100%;
@@ -503,26 +624,36 @@ body {
 .video-section img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the image covers the entire section */
-  display: block; /* Removes any unwanted spacing */
+  object-fit: cover;
+  /* Ensures the image covers the entire section */
+  display: block;
+  /* Removes any unwanted spacing */
 }
 
 .play-button {
-  width: 100px; /* Size of the play button */
+  width: 100px;
+  /* Size of the play button */
   height: 100px;
-  background-image: url('assets/play-not-hover.svg'); /* Path to the passive SVG */
+  background-image: url('assets/play-not-hover.svg');
+  /* Path to the passive SVG */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  position: absolute; /* Centers the button over the image */
+  position: absolute;
+  /* Centers the button over the image */
   cursor: pointer;
-  transition: transform 0.2s ease; /* Smooth transition for hover effect */
+  transition: transform 0.2s ease;
+  /* Smooth transition for hover effect */
 }
+
 /* Hover and pressed state */
 .play-button:hover {
-  background-image: url('assets/play-hover.svg'); /* Path to the hover/pressed SVG */
-  transform: scale(1.1); /* Slightly scale up on hover */
+  background-image: url('assets/play-hover.svg');
+  /* Path to the hover/pressed SVG */
+  transform: scale(1.1);
+  /* Slightly scale up on hover */
 }
+
 .curved-section {
   z-index: 1000;
 }
@@ -538,6 +669,7 @@ body {
   align-items: center;
   width: 96%;
 }
+
 .-Get-an-Intervention-Inc-All-rights-reserved {
   width: 371px;
   font-family: Montserrat;
@@ -549,6 +681,7 @@ body {
   letter-spacing: normal;
   color: #757575;
 }
+
 .Privacy-Policy-Terms-of-use-Site-Map {
   width: 283px;
   font-family: Montserrat;
@@ -561,12 +694,13 @@ body {
   text-align: right;
   color: #757575;
 }
+
 /*-------------------*/
 /*-------------------*/
 
 .green-wrapper {
   height: 650px;
-  z-index: 1; 
+  z-index: 1;
   padding-inline: 128px;
   background-size: cover;
   background-image: url('./assets/bg-image.png');
@@ -589,7 +723,7 @@ body {
 .logoimage {
   width: 226.094px;
   height: 35px;
-  
+
 }
 
 
@@ -640,6 +774,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .nav-contact p {
   margin-right: 30px;
 }
@@ -698,10 +833,10 @@ body {
 }
 
 .text-transparency {
-    color: transparent;
-    -webkit-text-stroke: 1px white;
-    font-family: 'Montserrat';
-    text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+  font-family: 'Montserrat';
+  text-transform: uppercase;
   margin-bottom: 0 !important;
 }
 
@@ -730,7 +865,7 @@ body {
 .contact-form {
   display: flex;
   justify-content: flex-end;
-  
+
 }
 
 .contact-wrapper {
@@ -801,14 +936,14 @@ body {
   height: 48px;
   color: white;
   border: 1px solid rgb(255, 255, 255);
-  padding-left:16px ;
+  padding-left: 16px;
 
 }
 
 input::placeholder {
   color: white;
   opacity: 0.5;
-  
+
   padding-top: 14px;
   padding-bottom: 14px;
 }
@@ -836,7 +971,7 @@ select {
   border: none;
   color: rgba(255, 255, 255, 0.709);
   background-color: rgba(62, 105, 96, 0.62);
-  padding-left:16px ;
+  padding-left: 16px;
   padding-top: 14px;
   padding-bottom: 14px;
   padding-right: 16px;
@@ -866,6 +1001,12 @@ option {
   cursor: pointer;
 }
 
+.contact-submit:hover {
+  background-color: #5BC8AF;
+  box-shadow: 0px 8px 6px 0px rgba(0, 0, 0, 0.08);
+
+}
+
 .submitimage {
   display: flex;
   width: 24px;
@@ -887,14 +1028,228 @@ option {
 
 }
 
+.inline-text {
+  padding-left: 13px;
+}
+
 @media screen and (max-width: 760px) {
   .text-contact-wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
   }
 }
+
 .hero-section {
   margin-bottom: 78px;
+}
+
+
+/*Media queries for we understand images*/
+@media (min-width: 768px)and(max-width:1024px) {
+  .we-understand-images {
+    gap: 24px;
+  }
+
+  .we-understand-image {
+    width: 224px;
+    height: 216.178px;
+    object-fit: contain;
+
+  }
+
+}
+
+@media (min-width: 360px) and (max-width: 767px) {
+  .we-understand-images {
+    display: none
+  }
+
+}
+
+
+/*Media queries for carousel*/
+@media (min-width:768px)and (max-width:1024px) {
+
+  .carousel-image {
+    width: 198.367px;
+    height: 198.367px;
+
+  }
+
+  .carousel-text-wrapper {
+    width: 496px;
+    height: 198px;
+  }
+
+  .name-text-wrapper {
+
+    margin-right: 20px;
+  }
+
+  .Abbie-Harvey {
+
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    margin-right: 20px;
+
+
+
+
+    /* 155.556% */
+  }
+
+  .I-have-been-caring-for-my-mom-dad-off-and-on-for-about-10-years-now-and-I-know-the-importance-of {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 11px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 200px;
+    /* 171.429% */
+  }
+
+  .arrow-left-icon {
+    display: none;
+  }
+
+  .arrow-right-icon {
+    display: none;
+  }
+}
+
+
+@media (min-width:360px)and (max-width:767px) {
+
+  .arrow-left-icon {
+    display: none;
+  }
+
+  .arrow-right-icon {
+    display: none;
+  }
+
+  .carousel-image {
+    width: 180.669px;
+    height: 180.669px;
+
+
+  }
+
+  .carousel-text-wrapper {
+    width: 328px;
+    height: 404px;
+    background: #194D44;
+    filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.12));
+    justify-content: flex-end;
+  }
+
+  .invalid-image {
+    width: 60px;
+    height: 47px;
+    margin-left: 140px;
+  }
+
+  .Abbie-Harvey {
+    padding-top: 10px;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    /* 155.556% */
+  }
+
+  .I-have-been-caring-for-my-mom-dad-off-and-on-for-about-10-years-now-and-I-know-the-importance-of {
+    padding-top: 10px;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 200px;
+    /* 171.429% */
+  }
+
+
+
+}
+
+
+/*Media queries for we understand*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .we-understand-para {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two columns: one for the stacked divs, one for the side div */
+    grid-template-rows: auto auto;
+    /* Two rows for the first two divs */
+    gap: 20px;
+  }
+
+  .we-understand-para-one {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .we-understand-para-two {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .we-understand-para-three {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+
+}
+
+@media (min-width:360px)and (max-width:767px) {
+  .we-understand-para {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+}
+
+/*for paragraph*/
+
+
+@media (min-width:768px)and (max-width:1024px) {
+  .paragraphs-wrapper {
+    display: flex;
+    flex-direction: row;
+    /* Arrange items horizontally */
+    justify-content: space-between;
+    gap: 10px;
+
+  }
+
+  .para-one {
+    width: 100%;
+
+  }
+
+  .para-two,
+  .para-three {
+    width: 48%;
+  }
+
+}
+
+
+@media (min-width:360px)and (max-width:767px) {
+  .paragraphs-wrapper {
+    grid-template-columns: 1fr;
+
+  }
+
 }
