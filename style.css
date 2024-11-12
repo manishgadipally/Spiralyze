@@ -572,6 +572,7 @@ body {
   background-image: url('./assets/bg-image.png');
   background-size: cover;
   background-position: center;
+
 }
 
 .header {
@@ -897,4 +898,15 @@ option {
 }
 .hero-section {
   margin-bottom: 78px;
+}
+
+/*----------------------------*/
+
+/* Media Queries */ 
+@media screen and (max-width: 768px) {
+  .green-wrapper {
+    height: 1090px;
+    width: 100%;
+    padding-inline: 20px !important;
+  }
 }
