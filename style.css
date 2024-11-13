@@ -50,6 +50,7 @@ body {
   .gai-button-wrapper {
     grid-template-columns: repeat(2,
         1fr);
+      
     /* Two columns for tablet-sized screens */
   }
 }
@@ -101,14 +102,21 @@ body {
 
 .gai-button:hover .tooltip {
   visibility: visible;
+  z-index: 1;
   opacity: 1;
-  
 
+
+}
+
+.gai-button:hover .info-icon {
+  display: inline-block
 }
 
 .info-icon {
   width: 24px;
   height: 24px;
+  padding-left: 10px;
+  display: none;
 }
 
 .tooltip {
@@ -118,36 +126,38 @@ body {
   border-radius: 8px;
   background: #297C6B;
   color: white;
- 
+
   top: 100%;
   font-family: Montserrat;
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  
+
   /* 153.846% */
 
 }
 
-
-.tooltip-text::after {
-  content: '';
+.tooltip::after {
+  content: "";
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
+  transform: translateX(-50%);
+  border-width: 10px;
   border-style: solid;
-  border-color: #297C6B transparent transparent transparent; 
+  border-color: transparent transparent #297c6b transparent;
 }
 
-.input-tooltip{
+
+
+.inputfname-tooltip,.inputlname-tooltip ,.inputemail-tooltip,.inputcompany-tooltip{
   visibility: hidden;
-  width: 300px;
-  height: 86px;
+  width: 180px;
+  height: 46px;
+  flex-shrink: 0;
   border-radius: 8px;
-  background:rgb(255, 3, 3);
+  background: #FF7777;
   color: white;
   z-index: 1;
   top: 100%;
@@ -156,8 +166,33 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
+ 
+  
 
 }
+
+@media (min-width:768px)and(max-width:1024px) {
+  .inputfname-tooltip,.inputlname-tooltip ,.inputemail-tooltip,.inputcompany-tooltip{
+    visibility: hidden;
+    width: 180px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #FF7777;
+    color: white;
+    z-index: 1;
+    top: 100%;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    bottom: -20px;
+  }
+
+  
+}
+
 
 
 
@@ -1048,7 +1083,7 @@ option {
 
 /*----------------------------*/
 
-/* Media Queries */ 
+/* Media Queries */
 @media screen and (max-width: 768px) {
   .green-wrapper {
     height: 1090px;
@@ -1056,211 +1091,315 @@ option {
     padding-inline: 20px !important;
   }
 
-/*Media queries for we understand images*/
-@media (min-width: 768px)and(max-width:1024px) {
-  .we-understand-images {
-    gap: 24px;
+  /*Media queries for we understand images*/
+  @media (min-width: 768px)and(max-width:1024px) {
+    .we-understand-images {
+      gap: 24px;
+    }
+
+    .we-understand-image {
+      width: 224px;
+      height: 216.178px;
+      object-fit: contain;
+
+    }
+
   }
 
-  .we-understand-image {
-    width: 224px;
-    height: 216.178px;
-    object-fit: contain;
+  @media (min-width: 360px) and (max-width: 767px) {
+    .we-understand-images {
+      display: none
+    }
 
   }
 
+
+  /*Media queries for carousel*/
+  @media (min-width:768px)and (max-width:1024px) {
+
+    .carousel-image {
+      width: 198.367px;
+      height: 198.367px;
+
+    }
+    .invalid-image {
+      width: 60px;
+      height: 47px;
+      margin-left: 320px;
+    }
+
+
+    .carousel-text-wrapper {
+      width: 496px;
+      height: 198px;
+      padding:14px 72px 15px;
+    }
+
+    .name-text-wrapper {
+
+      margin-right: 20px;
+    }
+
+    .Abbie-Harvey {
+
+      color: #FFF;
+      font-family: Montserrat;
+      font-size: 18px;
+      font-style: normal;
+      margin-right: 20px;
+
+
+
+
+      /* 155.556% */
+    }
+
+    .I-have-been-caring-for-my-mom-dad-off-and-on-for-about-10-years-now-and-I-know-the-importance-of {
+      color: #FFF;
+      font-family: Montserrat;
+      font-size: 11px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 24px;
+      margin-bottom: 200px;
+      /* 171.429% */
+    }
+
+    .arrow-left-icon {
+      display: none;
+    }
+
+    .arrow-right-icon {
+      display: none;
+    }
+  }
+
+
+  @media (min-width:360px)and (max-width:767px) {
+
+    .arrow-left-icon {
+      display: none;
+    }
+
+    .arrow-right-icon {
+      display: none;
+    }
+
+    .carousel-image {
+      width: 180.669px;
+      height: 180.669px;
+
+
+    }
+
+    .carousel-text-wrapper {
+      width: 328px;
+      height: 404px;
+      background: #194D44;
+      filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.12));
+      justify-content: flex-end;
+    }
+
+    .invalid-image {
+      width: 60px;
+      height: 47px;
+      margin-left: 140px;
+    }
+
+    .Abbie-Harvey {
+      padding-top: 10px;
+      color: #FFF;
+      font-family: Montserrat;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 28px;
+      /* 155.556% */
+    }
+
+    .I-have-been-caring-for-my-mom-dad-off-and-on-for-about-10-years-now-and-I-know-the-importance-of {
+      padding-top: 10px;
+      color: #FFF;
+      font-family: Montserrat;
+      font-size: 13px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 24px;
+      margin-bottom: 200px;
+      /* 171.429% */
+    }
+
+
+
+  }
+
+
+  /*Media queries for we understand*/
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .we-understand-para {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      /* Two columns: one for the stacked divs, one for the side div */
+      grid-template-rows: auto auto;
+      /* Two rows for the first two divs */
+      gap: 20px;
+    }
+
+    .we-understand-para-one {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .we-understand-para-two {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .we-understand-para-three {
+      grid-column: 2;
+      grid-row: 1 / 3;
+    }
+
+
+  }
+
+  @media (min-width:360px)and (max-width:767px) {
+    .we-understand-para {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+    }
+  }
+
+  /*for paragraph*/
+
+
+  @media (min-width:768px)and (max-width:1024px) {
+    .paragraphs-wrapper {
+      display: flex;
+      flex-direction: row;
+      /* Arrange items horizontally */
+      justify-content: space-between;
+      gap: 10px;
+
+    }
+
+    .para-one {
+      width: 100%;
+
+    }
+
+    .para-two,
+    .para-three {
+      width: 48%;
+    }
+
+  }
+
+
+  @media (min-width:360px)and (max-width:767px) {
+    .paragraphs-wrapper {
+      grid-template-columns: 1fr;
+
+    }
+
+  }
 }
 
-@media (min-width: 360px) and (max-width: 767px) {
-  .we-understand-images {
-    display: none
-  }
-
-}
 
 
-/*Media queries for carousel*/
-@media (min-width:768px)and (max-width:1024px) {
 
-  .carousel-image {
-    width: 198.367px;
-    height: 198.367px;
+@media (min-width:768)and(max-width:1024px) {
+  .Needs-Assesment:hover {
+
+    color: #5BC8AF;
 
   }
 
-  .carousel-text-wrapper {
-    width: 496px;
-    height: 198px;
+  .gai-button:hover .tooltip {
+    visibility: visible;
+    z-index: 1;
+    opacity: 1;
+
+
   }
 
-  .name-text-wrapper {
-
-    margin-right: 20px;
+  .gai-button:hover .info-icon {
+    display: inline-block
   }
 
-  .Abbie-Harvey {
-
-    color: #FFF;
-    font-family: Montserrat;
-    font-size: 18px;
-    font-style: normal;
-    margin-right: 20px;
-
-
-
-
-    /* 155.556% */
-  }
-
-  .I-have-been-caring-for-my-mom-dad-off-and-on-for-about-10-years-now-and-I-know-the-importance-of {
-    color: #FFF;
-    font-family: Montserrat;
-    font-size: 11px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 24px;
-    margin-bottom: 200px;
-    /* 171.429% */
-  }
-
-  .arrow-left-icon {
+  .info-icon {
+    width: 24px;
+    height: 24px;
+    padding-left: 10px;
     display: none;
   }
 
-  .arrow-right-icon {
-    display: none;
-  }
-}
+  .tooltip {
+    visibility: hidden;
+    width: 300px;
+    height: 86px;
+    border-radius: 8px;
+    background: #297C6B;
+    color: white;
 
-
-@media (min-width:360px)and (max-width:767px) {
-
-  .arrow-left-icon {
-    display: none;
-  }
-
-  .arrow-right-icon {
-    display: none;
-  }
-
-  .carousel-image {
-    width: 180.669px;
-    height: 180.669px;
-
-
-  }
-
-  .carousel-text-wrapper {
-    width: 328px;
-    height: 404px;
-    background: #194D44;
-    filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.12));
-    justify-content: flex-end;
-  }
-
-  .invalid-image {
-    width: 60px;
-    height: 47px;
-    margin-left: 140px;
-  }
-
-  .Abbie-Harvey {
-    padding-top: 10px;
-    color: #FFF;
-    font-family: Montserrat;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 28px;
-    /* 155.556% */
-  }
-
-  .I-have-been-caring-for-my-mom-dad-off-and-on-for-about-10-years-now-and-I-know-the-importance-of {
-    padding-top: 10px;
-    color: #FFF;
+    top: 100%;
     font-family: Montserrat;
     font-size: 13px;
-    font-style: italic;
+    font-style: normal;
     font-weight: 400;
-    line-height: 24px;
-    margin-bottom: 200px;
-    /* 171.429% */
-  }
+    line-height: 20px;
 
-
-
-}
-
-
-/*Media queries for we understand*/
-@media (min-width: 768px) and (max-width: 1024px) {
-  .we-understand-para {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* Two columns: one for the stacked divs, one for the side div */
-    grid-template-rows: auto auto;
-    /* Two rows for the first two divs */
-    gap: 20px;
-  }
-
-  .we-understand-para-one {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .we-understand-para-two {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  .we-understand-para-three {
-    grid-column: 2;
-    grid-row: 1 / 3;
-  }
-
-
-}
-
-@media (min-width:360px)and (max-width:767px) {
-  .we-understand-para {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-  }
-}
-
-/*for paragraph*/
-
-
-@media (min-width:768px)and (max-width:1024px) {
-  .paragraphs-wrapper {
-    display: flex;
-    flex-direction: row;
-    /* Arrange items horizontally */
-    justify-content: space-between;
-    gap: 10px;
-
-  }
-
-  .para-one {
-    width: 100%;
-
-  }
-
-  .para-two,
-  .para-three {
-    width: 48%;
-  }
-
-}
-
-
-@media (min-width:360px)and (max-width:767px) {
-  .paragraphs-wrapper {
-    grid-template-columns: 1fr;
+    /* 153.846% */
 
   }
 
 }
+
+@media (min-width:360px)and(max-width:767px) {
+  
+  .Needs-Assesment:hover {
+
+    color: #5BC8AF;
+
+  }
+
+  .gai-button:hover .tooltip {
+    visibility: visible;
+    z-index: 1;
+    opacity: 1;
+
+
+  }
+
+  .gai-button:hover .info-icon {
+    display: inline-block
+  }
+
+  .info-icon {
+    width: 24px;
+    height: 24px;
+    padding-left: 10px;
+    display: none;
+  }
+
+  .tooltip {
+    visibility: hidden;
+    width: 300px;
+    height: 86px;
+    border-radius: 8px;
+    background: #297C6B;
+    color: white;
+
+    top: 100%;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+    /* 153.846% */
+
+  }
 }
