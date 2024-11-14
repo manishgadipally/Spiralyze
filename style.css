@@ -50,7 +50,7 @@ body {
   .gai-button-wrapper {
     grid-template-columns: repeat(2,
         1fr);
-      
+
     /* Two columns for tablet-sized screens */
   }
 }
@@ -115,19 +115,20 @@ body {
 .info-icon {
   width: 24px;
   height: 24px;
-  padding-left: 10px;
+  padding-left: 20px;
   display: none;
 }
 
 .tooltip {
+  justify-content: center;
   visibility: hidden;
   width: 300px;
-  height: 86px;
+  height: 84px;
   border-radius: 8px;
   background: #297C6B;
   color: white;
-
-  top: 100%;
+  padding-left: 10px;
+  padding-top: 20px;
   font-family: Montserrat;
   font-size: 13px;
   font-style: normal;
@@ -151,49 +152,83 @@ body {
 
 
 
-.inputfname-tooltip,.inputlname-tooltip ,.inputemail-tooltip,.inputcompany-tooltip{
+.inputfname-tooltip,
+.inputlname-tooltip,
+.inputemail-tooltip,
+.inputcompany-tooltip,
+.inputcountry-tooltip {
   visibility: hidden;
-  width: 180px;
-  height: 46px;
+  width: 200px;
+  height: 50px;
   flex-shrink: 0;
   border-radius: 8px;
   background: #FF7777;
   color: white;
+  margin-top: 45px;
+  position: absolute;
   z-index: 1;
-  top: 100%;
   font-family: Montserrat;
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
- 
-  
-
+  padding-left: 15px;
+  padding-top: 6px;
 }
 
 @media (min-width:768px)and(max-width:1024px) {
-  .inputfname-tooltip,.inputlname-tooltip ,.inputemail-tooltip,.inputcompany-tooltip{
+
+  .inputfname-tooltip,
+  .inputlname-tooltip,
+  .inputemail-tooltip,
+  .inputcompany-tooltip,
+  .inputcountry-tooltip {
     visibility: hidden;
-    width: 180px;
-    height: 46px;
+    width: 200px;
+    height: 50px;
     flex-shrink: 0;
     border-radius: 8px;
     background: #FF7777;
     color: white;
+    margin-top: 45px;
+    position: absolute;
     z-index: 1;
-    top: 100%;
+    padding-left: 15px;
+    padding-top: 6px;
     font-family: Montserrat;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    bottom: -20px;
   }
-
-  
 }
 
+@media (min-width:360px) and (max-width:767px) {
 
+  .inputfname-tooltip,
+  .inputlname-tooltip,
+  .inputemail-tooltip,
+  .inputcompany-tooltip,
+  .inputcountry-tooltip {
+    visibility: hidden;
+    width: 200px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #FF7777;
+    color: white;
+    margin-top: 45px;
+    position: absolute;
+    z-index: 1;
+    padding-left: 15px;
+    padding-top: 6px;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
 
 
 /*-------------------*/
@@ -1068,14 +1103,249 @@ option {
   padding-left: 13px;
 }
 
-@media screen and (max-width: 760px) {
+
+
+
+@media (min-width:768px)and (max-width:1024px) {
   .text-contact-wrapper {
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+  }
+
+  .heading {
+    justify-content: center;
+  }
+
+  .navigation-wrapper {
+    flex-direction: column;
+  }
+
+  .navigation-border {
+    display: none;
+  }
+}
+
+
+
+
+                                                              /* For mobile media Query*/
+
+@media (min-width:360px)and (max-width:767px) {
+
+
+  .green-wrapper {
+    width: 360px;
+    height: 686px;
+    flex-shrink: 0;
+  }
+
+
+
+  .text-contact-wrapper {
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 44px;
+    font-size: 36px;
+
+  }
+
+  .heading {
+    width: 296px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 2px;
+
+  }
+
+  .text-transparency {
+    text-align: center;
+    -webkit-text-stroke-width: 1;
+    -webkit-text-stroke-color: #FFF;
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 44px;
+  
+    /* 122.222% */
+  }
+
+  .text-intervention {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 44px;
+  }
+
+  .text-header-info {
+    color: rgba(255, 255, 255, 0.80);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 171.429% */
+  }
+
+  .contact-fullname,
+  .contact-info {
+    flex-direction: column;
+
+  }
+
+  .contact-fname,
+  .contact-lname,
+  .contact-mail,
+  .contact-company,
+  .contact-country,
+  .fname,
+  .lname,
+  .mail,
+  .company {
+    width: 296px;
+    height: 48px;
+  }
+
+  .contact-wrapper {
+    width: 328px;
+    height: 555px;
+    flex-shrink: 0;
+  }
+
+
+
+  /*carousel 360px*/
+  .arrow-left-icon {
+    display: none;
+  }
+
+  .arrow-right-icon {
+    display: none;
+  }
+
+  .carousel-image {
+    width: 180.669px;
+    height: 180.669px;
+
+
+  }
+
+  .carousel-text-wrapper {
+    width: 328px;
+    height: 404px;
+    background: #194D44;
+    filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.12));
+    justify-content: flex-end;
+  }
+
+  .invalid-image {
+    width: 60px;
+    height: 47px;
+    margin-left: 140px;
+  }
+
+  .Abbie-Harvey {
+    padding-top: 10px;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    /* 155.556% */
+  }
+
+  .I-have-been-caring-for-my-mom-dad-off-and-on-for-about-10-years-now-and-I-know-the-importance-of {
+    padding-top: 10px;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 200px;
+    /* 171.429% */
+  }
+
+  /*gai button*/
+  .Needs-Assesment:hover {
+
+    color: #5BC8AF;
+
+  }
+
+  .gai-button:hover .tooltip {
+    visibility: visible;
+    z-index: 1;
+    opacity: 1;
+
+
+  }
+
+  .gai-button:hover .info-icon {
+    display: inline-block
+  }
+
+  .info-icon {
+    width: 24px;
+    height: 24px;
+    padding-left: 10px;
+    display: none;
+  }
+
+  .tooltip {
+    visibility: hidden;
+    width: 300px;
+    height: 86px;
+    border-radius: 8px;
+    background: #297C6B;
+    color: white;
+
+    top: 100%;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+    /* 153.846% */
+
+  }
+
+
+  .paragraphs-wrapper {
+    grid-template-columns: 1fr;
+
+  }
+  .we-understand-images {
+    display: none
+  }
+
+  .we-understand-para {
     display: flex;
     flex-direction: column;
     justify-content: center;
 
   }
+
 }
+
+
+
+
+
+
+
 
 .hero-section {
   margin-bottom: 78px;
@@ -1084,12 +1354,13 @@ option {
 /*----------------------------*/
 
 /* Media Queries */
-@media screen and (max-width: 768px) {
+@media (min-width:768px) and (max-width:1024px) {
   .green-wrapper {
     height: 1090px;
     width: 100%;
     padding-inline: 20px !important;
   }
+}
 
   /*Media queries for we understand images*/
   @media (min-width: 768px)and(max-width:1024px) {
@@ -1106,12 +1377,6 @@ option {
 
   }
 
-  @media (min-width: 360px) and (max-width: 767px) {
-    .we-understand-images {
-      display: none
-    }
-
-  }
 
 
   /*Media queries for carousel*/
@@ -1122,6 +1387,7 @@ option {
       height: 198.367px;
 
     }
+
     .invalid-image {
       width: 60px;
       height: 47px;
@@ -1132,7 +1398,7 @@ option {
     .carousel-text-wrapper {
       width: 496px;
       height: 198px;
-      padding:14px 72px 15px;
+      padding: 14px 72px 15px;
     }
 
     .name-text-wrapper {
@@ -1173,66 +1439,11 @@ option {
       display: none;
     }
   }
-
-
-  @media (min-width:360px)and (max-width:767px) {
-
-    .arrow-left-icon {
-      display: none;
-    }
-
-    .arrow-right-icon {
-      display: none;
-    }
-
-    .carousel-image {
-      width: 180.669px;
-      height: 180.669px;
-
-
-    }
-
-    .carousel-text-wrapper {
-      width: 328px;
-      height: 404px;
-      background: #194D44;
-      filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.12));
-      justify-content: flex-end;
-    }
-
-    .invalid-image {
-      width: 60px;
-      height: 47px;
-      margin-left: 140px;
-    }
-
-    .Abbie-Harvey {
-      padding-top: 10px;
-      color: #FFF;
-      font-family: Montserrat;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 28px;
-      /* 155.556% */
-    }
-
-    .I-have-been-caring-for-my-mom-dad-off-and-on-for-about-10-years-now-and-I-know-the-importance-of {
-      padding-top: 10px;
-      color: #FFF;
-      font-family: Montserrat;
-      font-size: 13px;
-      font-style: italic;
-      font-weight: 400;
-      line-height: 24px;
-      margin-bottom: 200px;
-      /* 171.429% */
-    }
+   
 
 
 
-  }
-
+ 
 
   /*Media queries for we understand*/
   @media (min-width: 768px) and (max-width: 1024px) {
@@ -1263,14 +1474,7 @@ option {
 
   }
 
-  @media (min-width:360px)and (max-width:767px) {
-    .we-understand-para {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-    }
-  }
+ 
 
   /*for paragraph*/
 
@@ -1298,14 +1502,7 @@ option {
   }
 
 
-  @media (min-width:360px)and (max-width:767px) {
-    .paragraphs-wrapper {
-      grid-template-columns: 1fr;
 
-    }
-
-  }
-}
 
 
 
@@ -1357,49 +1554,3 @@ option {
 
 }
 
-@media (min-width:360px)and(max-width:767px) {
-  
-  .Needs-Assesment:hover {
-
-    color: #5BC8AF;
-
-  }
-
-  .gai-button:hover .tooltip {
-    visibility: visible;
-    z-index: 1;
-    opacity: 1;
-
-
-  }
-
-  .gai-button:hover .info-icon {
-    display: inline-block
-  }
-
-  .info-icon {
-    width: 24px;
-    height: 24px;
-    padding-left: 10px;
-    display: none;
-  }
-
-  .tooltip {
-    visibility: hidden;
-    width: 300px;
-    height: 86px;
-    border-radius: 8px;
-    background: #297C6B;
-    color: white;
-
-    top: 100%;
-    font-family: Montserrat;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
-
-    /* 153.846% */
-
-  }
-}

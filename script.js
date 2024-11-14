@@ -59,72 +59,88 @@ CarouselFeature();
 
 
 
+function showTooltip(inputField) {
+  const tooltipMap = {
+    fname: '.inputfname-tooltip',
+    lname: '.inputlname-tooltip',
+    emails: '.inputemail-tooltip',
+    company: '.inputcompany-tooltip',
+    country: '.inputcountry-tooltip'
+  };
 
-document.getElementById("submitButton").addEventListener("click", function (event) {
-  event.preventDefault();
+  const tooltip = document.querySelector(tooltipMap[inputField.id]);
 
-  localStorage.setItem("fname", document.getElementById("fname").value);
-  localStorage.setItem("lname", document.getElementById("lname").value);
-  localStorage.setItem("emails", document.getElementById("emails").value);
-  localStorage.setItem("company", document.getElementById("company").value);
-  localStorage.setItem("country", document.getElementById("country").value);
-
-  window.location.href = "thankyou.html";
-});
-
-
-
-
-function handleInputField(inputField, tooltip) {
-  
-  inputField.addEventListener('focus', () => {
-   
-    hideAllTooltips();
-
-    
-    if (inputField.value.trim() === '') {  
+  if (inputField.tagName.toLowerCase() === 'select') {
+    if (inputField.value === '' || inputField.selectedIndex === 0) {
       tooltip.style.visibility = 'visible';
-      tooltip.style.opacity = 1;
-    }
-  });
-
-  
-  inputField.addEventListener('input', () => {
-    if (inputField.value.trim() !== '') {
+    } else {
       tooltip.style.visibility = 'hidden';
-      tooltip.style.opacity = 0;
     }
-  });
+  } else {
+    if (inputField.value.trim() === '') {
+      tooltip.style.visibility = 'visible';
+    } else {
+      tooltip.style.visibility = 'hidden';
+    }
+  }
 }
 
+function validateForm(event) {
+  const fields = document.querySelectorAll('input, select');
+  let isValid = true;
 
-function hideAllTooltips() {
-  
-  const allTooltips = document.querySelectorAll('.inputfname-tooltip, .inputlname-tooltip, .inputemail-tooltip, .inputcompany-tooltip');
+  const formData = {};
+
+  fields.forEach(field => {
+    showTooltip(field);
 
 
-  allTooltips.forEach(tooltip => {
-    tooltip.style.visibility = 'hidden';
-    tooltip.style.opacity = 0;
+    if (field.tagName.toLowerCase() === 'select' && (field.value === '' || field.selectedIndex === 0)) {
+      isValid = false;
+    } else if (field.value.trim() === '') {
+      isValid = false;
+    }
+
+
+    formData[field.id] = field.value.trim();
   });
+
+
+  if (isValid) {
+    localStorage.setItem('formData', JSON.stringify(formData));
+    window.location.href = 'thankyou.html';
+  } else {
+    event.preventDefault();
+  }
 }
 
-const fnameinputField = document.getElementById('fname');
-const fnametooltip = document.querySelector('.inputfname-tooltip');
+function hideTooltipOnChange(event) {
+  const tooltipMap = {
+    fname: '.inputfname-tooltip',
+    lname: '.inputlname-tooltip',
+    emails: '.inputemail-tooltip',
+    company: '.inputcompany-tooltip',
+    country: '.inputcountry-tooltip'
+  };
 
-const lnameinputField = document.getElementById('lname');
-const lnametooltip = document.querySelector('.inputlname-tooltip');
+  const tooltip = document.querySelector(tooltipMap[event.target.id]);
 
-const emailinputField = document.getElementById('emails');
-const emailtooltip = document.querySelector('.inputemail-tooltip');
+  if (event.target.tagName.toLowerCase() === 'select') {
+    if (event.target.value !== '' && event.target.selectedIndex !== 0) {
+      tooltip.style.visibility = 'hidden';
+    }
+  } else {
+    if (event.target.value.trim() !== '') {
+      tooltip.style.visibility = 'hidden';
+    }
+  }
+}
 
-const companyinputField = document.getElementById('company');
-const companytooltip = document.querySelector('.inputcompany-tooltip');
+const submitBtn = document.getElementById('submitButton');
+submitBtn.addEventListener('click', validateForm);
 
-
-handleInputField(fnameinputField, fnametooltip);
-handleInputField(lnameinputField, lnametooltip);
-handleInputField(emailinputField, emailtooltip);
-handleInputField(companyinputField, companytooltip);
-
-
+const fields = document.querySelectorAll('input, select');
+fields.forEach(field => {
+  field.addEventListener('input', hideTooltipOnChange);
+  field.addEventListener('change', hideTooltipOnChange);
+});

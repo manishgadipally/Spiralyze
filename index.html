@@ -83,53 +83,60 @@
 
             <div class="contact-form">
 
-              <div class="contact-wrapper">
-                <h4 class="contact-title">Contact Us</h4>
-                <div class="contact-fullname">
-                  <div class="contact-fname">
-                    <input class="fname" type="text" id="fname" name="fname" placeholder="First Name">
-                    <div class="inputfname-tooltip"id=fname-error>This field can’t be empty. Please fill it in.</div>
+              <form id="form">
+                <div class="contact-wrapper" >
+
+                  <h4 class="contact-title">Contact Us</h4>
+                  <div class="contact-fullname">
+                    <div class="contact-fname">
+                      <input class="fname" type="text" id="fname" name="fname" placeholder="First Name">
+                      <div class="inputfname-tooltip" id=fname-error>This field can’t be empty. Please fill it in.</div>
+                   </div>
+
+
+                    <div class="contact-lname">
+                      <input class="lname" type="text" id="lname" name="lname" placeholder="Last Name">
+                      <div class="inputlname-tooltip" id=lname_error>This field can’t be empty. Please fill it in.</div>
+                    </div>
+
                   </div>
-                  
-                  
-                  <div class="contact-lname">
-                    <input class="lname" type="text" id="lname" name="lname" placeholder="Last Name">
-                    <div class="inputlname-tooltip"id=lname-error>This field can’t be empty. Please fill it in.</div>
+                  <div class="contact-info">
+                    <div class="contact-mail">
+
+                      <input class='mail' type="email" id="emails" name="emails" placeholder="Business Email">
+                      <div class="inputemail-tooltip" id=email_error>This field can’t be empty. Please fill it in.</div>
+
+                    </div>
+
+                    <div class="contact-company">
+                      <input class="company" type="text" id="company" name="company" placeholder="Company">
+                      <div class="inputcompany-tooltip" id=company_error>This field can’t be empty. Please fill it in.
+                      </div>
+
+                    </div>
+
                   </div>
-                
-                </div>
-                <div class="contact-info">
-                  <div class="contact-mail">
+                  <div class="contact-country">
+                    <select name="country" id="country">
+                      <option value="" disabled selected hidden>Country</option>
+                      <option>India</option>
+                      <option>France</option>
+                      <option>Italy</option>
+                      <option>United States of America</option>
+                      <option>U.K</option>
+
+                    </select>
+                    <div class="inputcountry-tooltip" id=company_error>This field can’t be empty. Please fill it in.</div>
                     
-                    <input class='mail' type="email" id="emails" name="emails" placeholder="Business Email">
-                    <div class="inputemail-tooltip"id=email-error>This field can’t be empty. Please fill it in.</div>
-                   
+
+
                   </div>
-                
-                  <div class="contact-company">
-                    <input class="company" type="text" id="company" name="company" placeholder="Company">
-                    <div class="inputcompany-tooltip"id=company-error>This field can’t be empty. Please fill it in.</div>
-                   
+                  <div class="contact-submit">
+                    <img class="submitimage" src="./assets/submitbutton.png"><button class="button" type="button"
+                      id="submitButton" name="submit" >Submit</button>
                   </div>
-
                 </div>
-                <div class="contact-country">
-                  <select name="country" id="country">
-                    <option value="" disabled selected hidden>Country</option>
-                    <option>India</option>
-                    <option>France</option>
-                    <option>Italy</option>
-                    <option>United States of America</option>
-                    <option>U.K</option>
-                  </select>
-
-
-                </div>
-                <div class="contact-submit">
-                  <img class="submitimage" src="./assets/submitbutton.png"><button class="button" type="button"
-                    id="submitButton" name="submit" onclick="window.location.href = 'thankyou.html';">Submit</button>
-                </div>
-              </div>
+              </form>
 
             </div>
 
@@ -264,7 +271,7 @@
       </section>
       <section class="we-can-organize-everything">
         <div class="wcoe-heading">
-          <span class="outline-text">WE</span><span class="inline-text">CAN ORGANIZE EVERYTHING</span> 
+          <span class="outline-text">WE</span><span class="inline-text">CAN ORGANIZE EVERYTHING</span>
         </div>
         <div class="paragraphs-wrapper">
           <div class="para-one">
@@ -298,42 +305,48 @@
         <div class="gai-button-wrapper">
           <div class="gai-button">
             <span class="Needs-Assesment">
-              Needs Assessment   <span class="info-icon"><img src="./assets/info-icon.png"></span>
+              Needs Assessment <span class="info-icon"><img src="./assets/info-icon.png"></span>
             </span>
-            <div class="tooltip">We’re experienced in our individual crafts and understand how each one of our roles impacts your plan holistically.</div>
-          
+            <div class="tooltip">We’re experienced in our individual crafts and understand how each one of our roles
+              impacts your plan holistically.</div>
+
           </div>
           <div class="gai-button">
             <span class="Needs-Assesment">
               Treatment Planning & Placement <span class="info-icon"><img src="./assets/info-icon.png"></span>
             </span>
-            <div class="tooltip">We’re experienced in our individual crafts and understand how each one of our roles impacts your plan holistically.</div>
+            <div class="tooltip">We’re experienced in our individual crafts and understand how each one of our roles
+              impacts your plan holistically.</div>
           </div>
           <div class="gai-button">
             <span class="Needs-Assesment">
               Transportation & Logistics <span class="info-icon"><img src="./assets/info-icon.png"></span>
             </span>
-            <div class="tooltip">We’re experienced in our individual crafts and understand how each one of our roles impacts your plan holistically.</div>
-            
+            <div class="tooltip">We’re experienced in our individual crafts and understand how each one of our roles
+              impacts your plan holistically.</div>
+
           </div>
           <div class="gai-button">
             <span class="Needs-Assesment">
               Insurance Advocacy <span class="info-icon"><img src="./assets/info-icon.png"></span>
             </span>
-            <div class="tooltip">We’re experienced in our individual crafts and understand how each one of our roles impacts your plan holistically.</div>
+            <div class="tooltip">We’re experienced in our individual crafts and understand how each one of our roles
+              impacts your plan holistically.</div>
           </div>
           <div class="gai-button">
             <span class="Needs-Assesment">
               Employment Advocacy<span class="info-icon"><img src="./assets/info-icon.png"></span>
             </span>
-            <div class="tooltip">We’re experienced in our individual crafts and understand how each one of our roles impacts your plan holistically.</div>
+            <div class="tooltip">We’re experienced in our individual crafts and understand how each one of our roles
+              impacts your plan holistically.</div>
           </div>
           <div class="gai-button">
             <span class="Needs-Assesment">
               Aftercare Planning <span class="info-icon"><img src="./assets/info-icon.png"></span>
-          
+
             </span>
-            <div class="tooltip">We’re experienced in our individual crafts and understand how each one of our roles impacts your plan holistically.</div>
+            <div class="tooltip">We’re experienced in our individual crafts and understand how each one of our roles
+              impacts your plan holistically.</div>
           </div>
         </div>
       </section>
