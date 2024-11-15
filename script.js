@@ -144,3 +144,32 @@ fields.forEach(field => {
   field.addEventListener('input', hideTooltipOnChange);
   field.addEventListener('change', hideTooltipOnChange);
 });
+
+
+
+
+function adjustSections() {
+  const width = window.innerWidth;
+
+  
+  if (width > 1024) {
+
+    document.querySelector('.watch-the-video-container').style.display = 'block';
+
+    document.querySelector('.watch-the-video-container-tabletview').style.display = 'none';
+
+  }
+  
+  else if (width >= 768 && width <= 1024) {
+    document.querySelector('.watch-the-video-container').style.display = 'none';
+
+    document.querySelector('.watch-the-video-container-tabletview').style.display = 'block';
+
+  }
+  
+
+}
+
+// Run the function on load and on window resize
+window.addEventListener('load', adjustSections);
+window.addEventListener('resize', adjustSections);
