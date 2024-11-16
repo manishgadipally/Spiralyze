@@ -46,19 +46,18 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
-@media (min-width: 768px) and (max-width:1024px){
+@media (min-width: 768px) and (max-width:1024px) {
   .gai-button-wrapper {
     grid-template-columns: repeat(2,
         1fr);
 
     /* Two columns for tablet-sized screens */
   }
-  .gai-button{
-    width: 348px;
-  }
+
+
 }
 
-@media (max-width: 480px) {
+@media (min-width: 360px) and (max-width:767px) {
   .gai-button-wrapper {
     grid-template-columns: 1fr;
     /* One column for mobile screens */
@@ -74,7 +73,7 @@ body {
   margin-bottom: 32px;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 360px) and(max-width:767px) {
   .gai-button {
     padding: 0 20px;
     /* One column for mobile screens */
@@ -142,12 +141,15 @@ body {
   /* 153.846% */
 
 }
-.toparrow{
+
+.toparrow {
   content: '';
   position: absolute;
-  bottom: 100%;  /* Position the arrow at the top of the tooltip */
+  bottom: 100%;
+  /* Position the arrow at the top of the tooltip */
   left: 50%;
-  margin-left: -5px;  /* Center the arrow */
+  margin-left: -5px;
+  /* Center the arrow */
   width: 0;
   height: 0;
 }
@@ -156,12 +158,14 @@ body {
 .tooltip::after {
   content: '';
   position: absolute;
-  bottom: 100%;  /* Position the arrow at the top of the tooltip */
+  bottom: 100%;
+  /* Position the arrow at the top of the tooltip */
   left: 50%;
-  margin-left: -5px;  /* Center the arrow */
+  margin-left: -5px;
+  /* Center the arrow */
   width: 0;
   height: 0;
-  
+
   /* Arrow shape */
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
@@ -411,7 +415,7 @@ body {
 
 .carousel-dots {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 20px;
 }
@@ -529,9 +533,9 @@ body {
   margin-bottom: 100px;
 }
 
-/* .we-understand-container{
+.we-understand-container {
   background: #F5F5F5;
-} */
+}
 
 /*-------------------*/
 
@@ -831,11 +835,13 @@ body {
 }
 
 .nav-home {
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
   font-family: Montserrat;
   font-size: 14px;
   font-style: normal;
+  font-weight: 400;
   line-height: 41px;
-  color: rgba(255, 255, 255, 0.7);
 
 }
 
@@ -1154,34 +1160,6 @@ option {
 
 @media (min-width:360px)and (max-width:767px) {
 
-
-  .green-wrapper {
-
-
-    flex-shrink: 0;
-  }
-
-
-
-  .text-contact-wrapper {
-
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    line-height: 44px;
-    font-size: 36px;
-
-  }
-
-  .heading {
-    width: 296px;
-    height: 48px;
-    flex-shrink: 0;
-    border-radius: 2px;
-
-  }
-
   .text-transparency {
     text-align: center;
     -webkit-text-stroke-width: 1;
@@ -1226,6 +1204,7 @@ option {
   .contact-mail,
   .contact-company,
   .contact-country,
+  .contact-submit,
   .fname,
   .lname,
   .mail,
@@ -1251,49 +1230,6 @@ option {
     display: none;
   }
 
-  .carousel-image {
-    width: 180.669px;
-    height: 180.669px;
-
-
-  }
-
-  .carousel-text-wrapper {
-    width: 328px;
-    height: 404px;
-    background: #194D44;
-    filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.12));
-    justify-content: flex-end;
-  }
-
-  .invalid-image {
-    width: 60px;
-    height: 47px;
-    margin-left: 140px;
-  }
-
-  .Abbie-Harvey {
-    padding-top: 10px;
-    color: #FFF;
-    font-family: Montserrat;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 28px;
-    /* 155.556% */
-  }
-
-  .I-have-been-caring-for-my-mom-dad-off-and-on-for-about-10-years-now-and-I-know-the-importance-of {
-    padding-top: 10px;
-    color: #FFF;
-    font-family: Montserrat;
-    font-size: 13px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 24px;
-    margin-bottom: 200px;
-    /* 171.429% */
-  }
 
   /*gai button*/
   .Needs-Assesment:hover {
@@ -1357,27 +1293,29 @@ option {
     justify-content: center;
 
   }
-  .footer-container{
+
+  .footer-container {
     flex-direction: column;
-    gap:10px;
-    text-align:center;
-    width:100%;
+    gap: 10px;
+    text-align: center;
+    width: 100%;
     padding: 25px 117px 38px 128px;
   }
 
 }
+
 @media (min-width:768px) and (max-width:1024px) {
-  .footer-container{
+  .footer-container {
     flex-direction: column;
-    gap:10px;
-    text-align:center;
+    gap: 10px;
+    text-align: center;
     width: 96%;
     padding: 25px 117px 38px 128px;
   }
 
-  
 
-  
+
+
 }
 
 
@@ -1466,8 +1404,8 @@ option {
     font-size: 11px;
     font-style: italic;
     font-weight: 400;
-    line-height: 24px;
-    margin-bottom: 200px;
+    line-height: 21px;
+
     /* 171.429% */
   }
 
@@ -1573,7 +1511,7 @@ option {
 
 
 
-.curved-section-tabletview{
+.curved-section-tabletview {
   background: url('./assets/ciurved-section-tabview.png') no-repeat;
   background-size: cover;
   color: white;
@@ -1588,41 +1526,203 @@ option {
 
 
 }
+
 .curved-section-tabletview {
-  
+
   height: 768px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  
+
 }
-.video-section-tabletview{
-  
-height: 546.296px;
-flex-shrink: 0; 
-position: relative;
-display: flex;
-justify-content: center;
-align-items: center;
-top:-60px;
-z-index: -1;
-object-fit: contain;
+
+.video-section-tabletview {
+
+  height: 546.296px;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -60px;
+  z-index: -1;
+  object-fit: contain;
 
 
 }
+
 .video-section-tabletview img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   /* Ensures the image covers the entire section */
   display: block;
- 
+
   /* Removes any unwanted spacing */
 }
-.play-button-tabletview{
+
+.play-button-tabletview {
   width: 100px;
-  
+  /* Size of the play button */
+  height: 100px;
+  background-image: url('assets/play-not-hover.svg');
+  /* Path to the passive SVG */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  /* Centers the button over the image */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  right: 350px;
+
+}
+
+
+
+
+
+.carousel-image-mobileview {
+  width: 180.669px;
+  height: 180.669px;
+  flex-shrink: 0;
+  top: -15px;
+
+
+}
+
+
+.carousel-text-wrapper-mobileview {
+  width: 328px;
+  height: 404px;
+  background: #194D44;
+  filter: drop-shadow(0px 10px 30px rgba(0, 0, 0, 0.12));
+  justify-content: flex-end;
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.invalid-image-mobileview {
+  width: 60px;
+  height: 47px;
+  margin-left: 220px;
+  margin-top: 55px;
+}
+
+.Abbie-Harvey-mobileview {
+  padding-top: 10px;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  margin-left: 29px;
+  /* 155.556% */
+}
+
+.I-have-been-caring-for-my-mom-dad-off-and-on-for-about-10-years-now-and-I-know-the-importance-of-mobileview {
+  padding-top: 10px;
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 24px;
+  margin-left: 32px;
+  margin-right: 32px;
+  /* 171.429% */
+}
+
+.carousel-one-mobileview,
+.carousel-two-mobileview,
+.carousel-three-mobileview {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.carouselimage {
+  width: 180px;
+  height: 180px;
+
+}
+
+.dot-mobileview {
+  width: 16px;
+  height: 16px;
+  flex-grow: 0;
+  margin: 0 0 0 36px;
+  background-color: #eaeaea;
+  border-radius: 50%;
+}
+
+.carousel-dots-mobileview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.dot-mobileview.active-dot {
+  opacity: 1;
+  background-color: #5bc8af;
+}
+
+
+
+
+.curved-section-mobileview {
+  background: url('./assets/curved-section-mobileview.png') no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height:673px;
+
+
+}
+
+
+.video-section-mobileview {
+
+  height: 305.926px;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -60px;
+  z-index: -1;
+  object-fit: contain;
+
+
+}
+
+.video-section-mobileview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures the image covers the entire section */
+  display: block;
+
+  /* Removes any unwanted spacing */
+}
+
+.play-button-mobileview {
+  width: 100px;
+
 
   /* Size of the play button */
   height: 100px;
@@ -1635,11 +1735,112 @@ object-fit: contain;
   /* Centers the button over the image */
   cursor: pointer;
   transition: transform 0.2s ease;
-  right:350px;
+
+
+}
+
+.video-title-mobileview {
+
+  flex-grow: 0;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+}
+
+
+.video-description-mobileview {
+
+  flex-grow: 0;
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.video-container-heading-mobileview {
+  flex-grow: 0;
+  margin: 0 28px 48px 0;
+  -webkit-text-stroke: 1px #fff;
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.18;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.border-line {
+  border: 1px solid #EAEAEA
+}
+
+
+.nav-home:hover,.nav-about:hover,.nav-contact:hover,.nav-info:hover{
+  color: #FFF;
+  font-weight: 700;
+  /* 292.857% */
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+}
+
+.green-wrapper-mobileview {
+
+  z-index: 1;
+  
+  background-size: cover;
+  background-image: url('./assets/bg-image.png');
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  height:1062px;
+}
+.header-mobileview{
+  width:200px;
+  position: relative;
+  z-index: 2;
+  color: white;
+   width:100%;
+   padding-left:-22px;
+
+}
+.logo-mobileview{
+  width:200px;
+  height: 24px;
+  flex-shrink: 0;
  
+  
+}
+.heading-mobileview {
  
-  
-  
-  
-  /* Smooth transition for hover effect */
+  flex-shrink: 0;
+  border-radius: 2px;
+
+}
+.text-contact-wrapper-mobileview {
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 44px;
+  font-size: 36px;
+
+}
+.contact-form-mobileview {
+  display: flex;
+  justify-content: center;
+
 }

@@ -4,6 +4,8 @@ function CarouselFeature() {
     const leftArrow = document.querySelector(".arrow-left-icon");
     const rightArrow = document.querySelector(".arrow-right-icon");
     const dots = document.querySelectorAll(".dot");
+    const carouselMobileview=document.querySelectorAll(".carousel-one-mobileview,.carousel-two-mobileview,.carousel-three-mobileview")
+    const dotsMobileview=document.querySelectorAll(".dot-mobileview");
 
     let currentIndex = 0;
 
@@ -12,9 +14,22 @@ function CarouselFeature() {
         item.style.display = i === index ? "flex" : "none";
       });
 
+
+
+      carouselMobileview.forEach((item, i) => {
+        item.style.display = i === index ? "flex" : "none";
+      });
+
       dots.forEach((dot, i) => {
         dot.classList.toggle("active-dot", i === index);
       });
+      
+
+
+      dotsMobileview.forEach((dotmobileview, i) => {
+        dotmobileview.classList.toggle("active-dot", i === index);
+      });
+      
     }
 
     function nextSlide() {
@@ -36,12 +51,30 @@ function CarouselFeature() {
       clearInterval(autoPlay);
     });
 
+    document.querySelector(".carousel-container-mobileview").addEventListener("mouseenter", () => {
+      clearInterval(autoPlay);
+    });
+
     document.querySelector(".carousel-container").addEventListener("mouseleave", () => {
       autoPlay = setInterval(nextSlide, 5000000000000);
     });
+    document.querySelector(".carousel-container-mobileview").addEventListener("mouseleave", () => {
+      autoPlay = setInterval(nextSlide, 5000);
+    });
+
+
 
     dots.forEach((dot, i) => {
       dot.addEventListener("click", () => {
+        currentIndex = i;
+        showSlide(currentIndex);
+      });
+    });
+
+
+
+    dotsMobileview.forEach((dotmobileview, i) => {
+      dotmobileview.addEventListener("click", () => {
         currentIndex = i;
         showSlide(currentIndex);
       });
@@ -149,12 +182,13 @@ fields.forEach(field => {
 
 
 function adjustSections() {
-  const width = window.innerWidth;
+  const width = window.outerWidth;
 
   
   if (width > 1024) {
 
     document.querySelector('.watch-the-video-container').style.display = 'block';
+    document.querySelector('.watch-the-video-container-mobileview').style.display = 'none';
 
     document.querySelector('.watch-the-video-container-tabletview').style.display = 'none';
 
@@ -162,9 +196,18 @@ function adjustSections() {
   
   else if (width >= 768 && width <= 1024) {
     document.querySelector('.watch-the-video-container').style.display = 'none';
-
+    document.querySelector('.watch-the-video-container-mobileview').style.display = 'none';
     document.querySelector('.watch-the-video-container-tabletview').style.display = 'block';
 
+  }
+  else if(width>= 360 && width<=767){
+    document.querySelector('.watch-the-video-container').style.display = 'none';
+    document.querySelector('.watch-the-video-container-mobileview').style.display = 'block';
+    document.querySelector('.watch-the-video-container-tabletview').style.display = 'none';
+
+  }
+  else{
+    document.querySelector('.watch-the-video-container').style.display = 'none';
   }
   
 
@@ -173,3 +216,33 @@ function adjustSections() {
 // Run the function on load and on window resize
 window.addEventListener('load', adjustSections);
 window.addEventListener('resize', adjustSections);
+
+
+/* for carousel*/ 
+function adjustSectionsmobileview() {
+  const width1 = window.outerWidth;
+
+
+  if (width1 >= 360 && width1 <= 767) {
+    document.querySelector('.carousel-container').style.display = 'none';
+    document.querySelector('.hero-section').style.display = 'none';
+    document.querySelector('.hero-section-mobileview').style.display = 'block';
+    document.querySelector('.carousel-container-mobileview').style.display = 'block';
+
+  }
+  else if(width1>767){
+    document.querySelector('.hero-section').style.display = 'block';
+    document.querySelector('.hero-section-mobileview').style.display = 'none';
+    document.querySelector('.carousel-container-mobileview').style.display = 'none';
+    document.querySelector('.carousel-container').style.display = 'block';
+
+  }
+  
+  
+
+}
+
+// Run the function on load and on window resize
+window.addEventListener('load', adjustSectionsmobileview);
+window.addEventListener('resize', adjustSectionsmobileview);
+
