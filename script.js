@@ -230,6 +230,12 @@ window.addEventListener('load', adjustSectionsmobileview);
 window.addEventListener('resize', adjustSectionsmobileview);
 
 
+
+
+
+
+
+
 // Select input fields and error tooltips
 const fnameInput = document.querySelector(".fname");
 const fnameError = document.querySelector(".inputfname-tooltip");
@@ -335,3 +341,78 @@ document.getElementById('video-thumbnail').addEventListener('click', function() 
   // Show the video container within the same space
   container.style.display = 'block';
 });
+
+
+
+
+
+
+
+// Selecting elements
+const playButtonTabletView = document.querySelector('.play-button-tabletview');
+const videoThumbnailTabletView = document.getElementById('video-thumbnail-tabletview');
+const videoContainerTabletView = document.getElementById('video-container-tabletview');
+const iframeTabletView = document.getElementById('video-frame-tabletview');
+
+// YouTube video ID
+const videoIdTabletView = 'tgbNymZ7vqY'; // Replace with your desired YouTube video ID
+
+// Play button click handler
+playButtonTabletView.addEventListener('click', function () {
+  // Hide play button and video thumbnail
+  playButtonTabletView.style.display = 'none';
+  videoThumbnailTabletView.style.display = 'none';
+
+  // Show video container and set the YouTube iframe URL
+  videoContainerTabletView.style.display = 'block';
+  iframeTabletView.src = `https://www.youtube.com/embed/${videoIdTabletView}?autoplay=1&modestbranding=1&rel=0`;
+});
+
+// Toggle back to thumbnail view (optional)
+videoContainerTabletView.addEventListener('click', function () {
+  // Hide the video container and stop the video
+  videoContainerTabletView.style.display = 'none';
+  iframeTabletView.src = ''; // Clear iframe src to stop the video
+
+  // Show play button and video thumbnail
+  playButtonTabletView.style.display = 'block';
+  videoThumbnailTabletView.style.display = 'block';
+});
+
+
+
+
+
+
+
+// Selecting elements for mobile view
+const playButtonMobileView = document.querySelector('.play-button-mobileview');
+const videoThumbnailMobileView = document.getElementById('video-thumbnail-mobileview');
+const videoContainerMobileView = document.getElementById('video-container-mobileview');
+const iframeMobileView = document.getElementById('video-frame-mobileview');
+
+// YouTube video ID
+const videoIdMobile = 'tgbNymZ7vqY'; // Replace with your desired YouTube video ID
+
+// Play button click handler
+playButtonMobileView.addEventListener('click', function () {
+  // Hide play button and video thumbnail
+  playButtonMobileView.style.display = 'none';
+  videoThumbnailMobileView.style.display = 'none';
+
+  // Show video container and set the YouTube iframe URL
+  videoContainerMobileView.style.display = 'block';
+  iframeMobileView.src = `https://www.youtube.com/embed/${videoIdMobile}?autoplay=1&modestbranding=1&rel=0`;
+});
+
+// Optional: Toggle back to thumbnail view
+videoContainerMobileView.addEventListener('click', function () {
+  // Hide video container and stop the video
+  videoContainerMobileView.style.display = 'none';
+  iframeMobileView.src = ''; // Clear iframe src to stop the video
+
+  // Show play button and thumbnail again
+  playButtonMobileView.style.display = 'block';
+  videoThumbnailMobileView.style.display = 'block';
+});
+
