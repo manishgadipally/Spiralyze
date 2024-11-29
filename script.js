@@ -231,7 +231,7 @@ window.addEventListener('resize', adjustSectionsmobileview);
 
 
 // Select input fields and error tooltips
-const fnameInput = document.querySelector(".fname");
+/*const fnameInput = document.querySelector(".fname");
 const fnameError = document.querySelector(".inputfname-tooltip");
 
 const lnameInput = document.querySelector(".lname");
@@ -310,7 +310,103 @@ submitButton.addEventListener("click", (e) => {
     window.localStorage.setItem("formData", JSON.stringify(formData));
     window.location.href = "thankyou.html"; // Replace with your target page
   }
+});*/
+
+const fnameInput = document.querySelector(".fname");
+const fnameError = document.querySelector(".inputfname-tooltip");
+
+const lnameInput = document.querySelector(".lname");
+const lnameError = document.querySelector(".inputlname-tooltip");
+
+const emailInput = document.querySelector(".mail");
+const emailError = document.querySelector(".inputemail-tooltip");
+
+const companyInput = document.querySelector(".company");
+const companyError = document.querySelector(".inputcompany-tooltip");
+
+const countryInput = document.querySelector(".country");
+const countryError = document.querySelector(".inputcountry-tooltip");
+
+const submitButton = document.getElementById("submitButton");
+
+// Add event listeners for each input field to handle real-time validation
+fnameInput.addEventListener("input", () => toggleTooltip(fnameInput, fnameError));
+lnameInput.addEventListener("input", () => toggleTooltip(lnameInput, lnameError));
+emailInput.addEventListener("input", () => toggleTooltip(emailInput, emailError));
+companyInput.addEventListener("input", () => toggleTooltip(companyInput, companyError));
+
+// Add an event listener for the select tag (country input)
+countryInput.addEventListener("change", () => toggleTooltip(countryInput, countryError));
+
+// Function to show/hide tooltips dynamically
+function toggleTooltip(inputField, errorTooltip) {
+  // For select, check if the selected value is empty or the placeholder option
+  if (
+    (inputField.tagName === "SELECT" && inputField.value === "default") || // Placeholder selected in <select>
+    (inputField.tagName !== "SELECT" && inputField.value.trim() === "")    // Empty for other input types
+  ) {
+    errorTooltip.style.visibility = "visible"; // Show tooltip
+  } else {
+    errorTooltip.style.visibility = "hidden"; // Hide tooltip
+  }
+}
+
+// Add event listener for form submission
+submitButton.addEventListener("click", (e) => {
+  e.preventDefault(); // Prevent form submission
+
+  let isValid = true;
+
+  // Validate all fields on button click
+  if (fnameInput.value.trim() === "") {
+    fnameError.style.visibility = "visible";
+    isValid = false;
+  }
+
+  if (lnameInput.value.trim() === "") {
+    lnameError.style.visibility = "visible";
+    isValid = false;
+  }
+
+  if (emailInput.value.trim() === "") {
+    emailError.style.visibility = "visible";
+    isValid = false;
+  }
+
+  if (companyInput.value.trim() === "") {
+    companyError.style.visibility = "visible";
+    isValid = false;
+  }
+
+  // Validation for the <select> tag
+  if (countryInput.value === "default") { // Assuming "default" is the placeholder value
+    countryError.style.visibility = "visible";
+    isValid = false;
+  }
+
+  // If all fields are valid, proceed to submit or navigate
+  if (isValid) {
+    const formData = {
+      fname: fnameInput.value.trim(),
+      lname: lnameInput.value.trim(),
+      emails: emailInput.value.trim(),
+      company: companyInput.value.trim(),
+      country: countryInput.value.trim(),
+    };
+
+    // Store form data in localStorage and navigate to another page
+    window.localStorage.setItem("formData", JSON.stringify(formData));
+    window.location.href = "thankyou.html"; // Replace with your target page
+  }
 });
+
+
+
+
+
+
+
+
 
 
 
