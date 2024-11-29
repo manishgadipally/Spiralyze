@@ -46,6 +46,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
+
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -71,7 +72,7 @@ body {
   border: solid 2px #5bc8af;
   margin-right: 32px;
   margin-bottom: 32px;
-  z-index: 2;
+  cursor: pointer;
 }
 
 @media (min-width: 360px) and(max-width:767px) {
@@ -105,6 +106,7 @@ body {
   visibility: visible;
   z-index: 1;
   opacity: 1;
+  position: relative;
 }
 
 .gai-button:hover .info-icon {
@@ -133,7 +135,7 @@ body {
   font-weight: 400;
   line-height: 20px;
   z-index: 1;
-
+position: relative;
   /* 153.846% */
 }
 
@@ -159,7 +161,7 @@ body {
   /* Center the arrow */
   width: 0;
   height: 0;
-
+  transform: rotate(180deg);
   /* Arrow shape */
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
@@ -326,6 +328,8 @@ body {
   align-items: center;
   margin-bottom: 32px;
   padding-inline: 128px;
+  position: relative;
+  bottom: 30px;
 }
 
 .carousel-wrapper {
@@ -1225,6 +1229,7 @@ option {
     visibility: visible;
     z-index: 1;
     opacity: 1;
+    position: relative;
   }
 
   .gai-button:hover .info-icon {
@@ -1245,7 +1250,8 @@ option {
     border-radius: 8px;
     background: #297c6b;
     color: white;
-
+    position: relative;
+    z-index: 1;
     top: 100%;
     font-family: Montserrat;
     font-size: 13px;
@@ -1290,7 +1296,7 @@ option {
 }
 
 .hero-section {
-  margin-bottom: 78px;
+  background-color: #F5F5F5;
 }
 
 /*----------------------------*/
@@ -1408,6 +1414,7 @@ option {
     visibility: visible;
     z-index: 1;
     opacity: 1;
+    position: relative;
   }
 
   .gai-button:hover .info-icon {
@@ -1428,7 +1435,8 @@ option {
     border-radius: 8px;
     background: #297c6b;
     color: white;
-
+    position: relative;
+    z-index: 1;
     top: 100%;
     font-family: Montserrat;
     font-size: 13px;
@@ -1757,4 +1765,12 @@ option {
 
 .we-can-organize-everything{
   padding-inline: 128px;
+}
+.rectangle-curve-wrapper {
+  position: relative;
+  bottom: 89px;
+}
+.svg-rectangle-2 {
+  position: relative;
+  bottom: 120px;
 }
