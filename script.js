@@ -335,3 +335,5 @@ document.getElementById('video-thumbnail').addEventListener('click', function() 
   // Show the video container within the same space
   container.style.display = 'block';
 });
+
+

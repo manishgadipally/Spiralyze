@@ -52,6 +52,7 @@ body {
 @media (min-width: 768px) and (max-width: 1024px) {
   .gai-button-wrapper {
     grid-template-columns: repeat(2, 1fr);
+    padding-inline: 0px !important;
 
     /* Two columns for tablet-sized screens */
   }
@@ -60,6 +61,7 @@ body {
 @media (min-width: 360px) and (max-width: 767px) {
   .gai-button-wrapper {
     grid-template-columns: 1fr;
+    padding-inline: 16px !important;
     /* One column for mobile screens */
   }
 }
@@ -254,6 +256,10 @@ position: relative;
   display: flex;
   align-items: center;
   margin-bottom: 32px;
+  @media screen and (max-width: 768px) {
+   display: block;
+    
+  }
 }
 
 .outline-text {
@@ -922,13 +928,12 @@ position: relative;
   line-height: 72px;
   flex-direction: column;
   align-items: flex-start;
-  /* 112.5% */
 }
 
 .text-transparency {
   color: transparent;
   -webkit-text-stroke: 1px white;
-  font-family: "Montserrat";
+  font-family: "Arial";
   text-transform: uppercase;
   margin-bottom: 0 !important;
 }
@@ -1765,6 +1770,9 @@ option {
 
 .we-can-organize-everything{
   padding-inline: 128px;
+  @media screen and (max-width: 768px) {
+    padding-inline: 20px;
+  }
 }
 .rectangle-curve-wrapper {
   position: relative;
@@ -1774,3 +1782,8 @@ option {
   position: relative;
   bottom: 120px;
 }
+
+
+
+
+
