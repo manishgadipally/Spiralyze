@@ -195,13 +195,13 @@
                   <div class="contact-fullname ">
                     <div class="contact-fname">
                       <input class="fname" type="text" id="fname" name="fname" placeholder="First Name">
-                      <div class="inputfname-tooltip" id=fname-error>This field can’t be empty. Please fill it in.</div>
+                      <div class="inputfname-tooltip"   style="visibility: hidden;"id=fname-error>This field can’t be empty. Please fill it in.</div>
                     </div>
 
 
                     <div class="contact-lname">
                       <input class="lname" type="text" id="lname" name="lname" placeholder="Last Name">
-                      <div class="inputlname-tooltip" id=lname_error>This field can’t be empty. Please fill it in.</div>
+                      <div class="inputlname-tooltip" style="visibility: hidden;" id=lname_error>This field can’t be empty. Please fill it in.</div>
                     </div>
 
                   </div>
@@ -209,20 +209,20 @@
                     <div class="contact-mail">
 
                       <input class='mail' type="email" id="emails" name="emails" placeholder="Business Email">
-                      <div class="inputemail-tooltip" id=email_error>This field can’t be empty. Please fill it in.</div>
+                      <div class="inputemail-tooltip" style="visibility: hidden;" id=email_error>This field can’t be empty. Please fill it in.</div>
 
                     </div>
 
                     <div class="contact-company">
                       <input class="company" type="text" id="company" name="company" placeholder="Company">
-                      <div class="inputcompany-tooltip" id=company_error>This field can’t be empty. Please fill it in.
+                      <div class="inputcompany-tooltip"  style="visibility: hidden;" id=company_error>This field can’t be empty. Please fill it in.
                       </div>
 
                     </div>
 
                   </div>
                   <div class="contact-country">
-                    <select name="country" id="country">
+                    <select name="country" id="country" class="country">
                       <option value="" disabled selected hidden>Country</option>
                       <option>India</option>
                       <option>France</option>
@@ -582,9 +582,12 @@
           </div>
 
           <!-- Right side with video section -->
-          <div class="video-section">
+          <div class="video-section" id="video-thumbnail">
             <img src="assets/Mask Group.png" alt="Video Image">
             <div class="play-button"></div>
+          </div>
+          <div id="video-container">
+            <iframe id="video-frame" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
           </div>
         </div>
       </section>

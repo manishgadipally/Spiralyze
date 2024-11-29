@@ -230,117 +230,103 @@ window.addEventListener('load', adjustSectionsmobileview);
 window.addEventListener('resize', adjustSectionsmobileview);
 
 
-// Map each field to its respective tooltip
-const tooltipMap = {
-  fname: '.inputfname-tooltip',
-  lname: '.inputlname-tooltip',
-  emails: '.inputemail-tooltip',
-  company: '.inputcompany-tooltip',
-  country: '.inputcountry-tooltip'
-};
+// Select input fields and error tooltips
+const fnameInput = document.querySelector(".fname");
+const fnameError = document.querySelector(".inputfname-tooltip");
 
-// Function to handle tooltip visibility for a single field
-function updateTooltipVisibilityForField(inputField) {
-  const tooltip = document.querySelector(tooltipMap[inputField.id]);
+const lnameInput = document.querySelector(".lname");
+const lnameError = document.querySelector(".inputlname-tooltip");
 
-  if (inputField.tagName.toLowerCase() === 'input') {
-    // If text input is empty, show tooltip
-    if (inputField.value.trim() === '') {
-      tooltip.style.visibility = 'visible';
-    } else {
-      tooltip.style.visibility = 'hidden';
-    }
-  }
+const emailInput = document.querySelector(".mail");
+const emailError = document.querySelector(".inputemail-tooltip");
 
-  if (inputField.tagName.toLowerCase() === 'select') {
-    // If dropdown is not selected, show tooltip
-    if (inputField.value === '' || inputField.selectedIndex === 0) {
-      tooltip.style.visibility = 'visible';
-    } else {
-      tooltip.style.visibility = 'hidden';
-    }
-  }
-}
-
-// Function to validate each individual field and return if it's valid
-function validateField(inputField) {
-  const tooltip = document.querySelector(tooltipMap[inputField.id]);
-
-  // For input fields (text input)
-  if (inputField.tagName.toLowerCase() === 'input') {
-    if (inputField.value.trim() === '') {
-      // Show tooltip if input field is empty
-      tooltip.style.visibility = 'hidden';
-      return true;  // Field is invalid
-    } else {
-      // Hide tooltip if input field is filled
-      tooltip.style.visibility = 'visible';
-    }
-  }
-
-  // For select fields (dropdown)
-  if (inputField.tagName.toLowerCase() === 'select') {
-    if (inputField.value === '' || inputField.selectedIndex === 0) {
-      // Show tooltip if dropdown is empty or the placeholder is selected
-      tooltip.style.visibility = 'hidden';
-      return true;  // Field is invalid
-    } else {
-      // Hide tooltip if a valid option is selected
-      tooltip.style.visibility = 'visible';
-    }
-  }
-
-  return false;  // Return true if the field is valid
-}
+const companyInput = document.querySelector(".company");
+const companyError = document.querySelector(".inputcompany-tooltip");
 
 
-// Function to handle form submission and validate all fields
-function validateForm(event) {
-  const fields = document.querySelectorAll('input, select');
-  let isValid = true;
-  const formData = {};
+const countryInput = document.querySelector(".country");
+const countryError = document.querySelector(".inputcountry-tooltip");
 
-  fields.forEach(field => {
-    // Validate each field individually
-    if (!validateField(field)) {
-      isValid = true;
-    }
+const submitButton = document.getElementById("submitButton");
 
-    // Collect form data
- 
-  });
+// Add event listeners for each input field to handle real-time validation
+fnameInput.addEventListener("input", () => toggleTooltip(fnameInput, fnameError));
+lnameInput.addEventListener("input", () => toggleTooltip(lnameInput, lnameError));
+emailInput.addEventListener("input", () => toggleTooltip(emailInput, emailError));
+companyInput.addEventListener("input", () => toggleTooltip(companyInput, companyError));
 
-  if (isValid) {
-    // If form is valid, store data in localStorage and redirect
-    localStorage.setItem('formData', JSON.stringify(formData));
-    window.location.href = 'thankyou.html'; // Redirect to thank you page
+
+
+
+// Function to show/hide tooltips dynamically
+function toggleTooltip(inputField, errorTooltip) {
+  // For select, check if the selected value is empty or the placeholder option
+  if (inputField.value.trim() === "" ) {
+    errorTooltip.style.visibility = "visible"; // Show tooltip
   } else {
-    event.preventDefault(); // Prevent form submission if any field is invalid
+    errorTooltip.style.visibility = "hidden"; // Hide tooltip
   }
 }
 
-// Hide tooltip immediately when user starts typing or selects an option
-function hideTooltipOnChange(event) {
-  updateTooltipVisibilityForField(event.target);
-}
+// Add event listener for form submission
+submitButton.addEventListener("click", (e) => {
+  e.preventDefault(); // Prevent form submission
 
-// Attach event listeners for each field
-const submitBtn = document.getElementById('submitButton');
-submitBtn.addEventListener('click', (event) => {
-  event.preventDefault();  // Prevent form submission
-  validateForm(event);  // Run form validation
+  let isValid = true;
+
+  // Validate all fields on button click
+  if (fnameInput.value.trim() === "") {
+    fnameError.style.visibility = "visible";
+    isValid = false;
+  }
+
+  if (lnameInput.value.trim() === "") {
+    lnameError.style.visibility = "visible";
+    isValid = false;
+  }
+
+  if (emailInput.value.trim() === "") {
+    emailError.style.visibility = "visible";
+    isValid = false;
+  }
+
+  if (companyInput.value.trim() === "") {
+    companyError.style.visibility = "visible";
+    isValid = false;
+  }
+ 
+
+  // If all fields are valid, proceed to submit or navigate
+  if (isValid) {
+    const formData = {
+      fname: fnameInput.value.trim(),
+      lname: lnameInput.value.trim(),
+      emails: emailInput.value.trim(),
+      company: companyInput.value.trim(),
+      country:countryInput.value.trim(),
+    };
+
+    // Store form data in localStorage and navigate to another page
+    window.localStorage.setItem("formData", JSON.stringify(formData));
+    window.location.href = "thankyou.html"; // Replace with your target page
+  }
 });
 
-const fields = document.querySelectorAll('input, select');
-fields.forEach(field => {
-  // Hide tooltip immediately when user starts typing or selects an option
-  field.addEventListener('input', hideTooltipOnChange);
-  field.addEventListener('change', hideTooltipOnChange);
-});
 
-// Ensure tooltips are updated when the page loads (for pre-filled values)
-window.addEventListener('DOMContentLoaded', () => {
-  const fields = document.querySelectorAll('input, select');
-  fields.forEach(field => updateTooltipVisibilityForField(field));  // Set initial visibility based on field values
-});
 
+
+document.getElementById('video-thumbnail').addEventListener('click', function() {
+  var videoId = 'tgbNymZ7vqY'; // Example YouTube video ID (replace with your desired ID)
+  var iframe = document.getElementById('video-frame');
+  var container = document.getElementById('video-container');
+  var videoThumbnail = document.getElementById('video-thumbnail');
+  
+  // Correct YouTube embed URL with autoplay
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=1&fs=1`;
+
+  // Hide the thumbnail image and play button inside the video section
+  videoThumbnail.innerHTML = ''; // Clear the content (image and button)
+  
+  // Show the video container within the same space
+  container.style.display = 'block';
+});
